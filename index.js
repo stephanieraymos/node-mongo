@@ -22,8 +22,9 @@ MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
 
   //Delete all documents in the campsites collection. This is not normally done. Only doing it so that as I test my app; everytime i run it, i'll start with a fresh, blank collect each time.
   //drop means delete/remove
+  //In the parameters for assert.strictEqual we are asserting that error is not null
   db.dropCollection('campsites', (err, result) => {
-    assert.strictEqual(/*asserting that error is not null*/err, null);
+    assert.strictEqual(err, null);
     console.log('Dropped Collection', result);
 
     //Recreating campsites collection:
