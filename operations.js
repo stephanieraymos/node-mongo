@@ -1,7 +1,6 @@
-const assert = require('assert').strict;
-
 //Four methods below to insert, find, remove and update documents
 //We can use the coll constant defined below to interact with a specific collection in the mongodb server
+//All methods below will return promises as their return values by default since no callbacks were defined.
 exports.insertDocument = (db, document, collection) => {
   const coll = db.collection(collection);
   return coll.insertOne(document);
