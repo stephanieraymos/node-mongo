@@ -1,5 +1,4 @@
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert').strict;
 const dboper = require('./operations');
 
 //Port at which the mondoDb server is running:
