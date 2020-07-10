@@ -1,5 +1,6 @@
 const assert = require('assert').strict;
 
+//We can use the coll constant defined below to interact with a specific collection in the mongodb server
 exports.insertDocument = (db, document, collection, callback) => {
     const coll = db.collection(collection);
     coll.insertOne(document, (err, result) => {
@@ -8,6 +9,7 @@ exports.insertDocument = (db, document, collection, callback) => {
     });
 };
 
+//The /toArray method below puts all the documents that were found into an array
 exports.findDocuments = (db, collection, callback) => {
     const coll = db.collection(collection);
     coll.find().toArray((err, docs) => {
@@ -15,6 +17,7 @@ exports.findDocuments = (db, collection, callback) => {
         callback(docs);
     });
 };
+
 
 exports.removeDocument = (db, document, collection, callback) => {
     const coll = db.collection(collection);
@@ -24,6 +27,7 @@ exports.removeDocument = (db, document, collection, callback) => {
     });
 };
 
+//$set is an update operator follwed by the update object
 exports.updateDocument = (db, document, update, collection, callback) => {
     const coll = db.collection(collection);
     coll.updateOne(document, { $set: update }, null, (err, result) => {
