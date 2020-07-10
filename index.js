@@ -13,7 +13,7 @@ const dbname = 'nucampsite';
 
 //First argument in assert/strictEqual is the actual value to be checked, second argument is the expected value that we're checking against to see if the first argument strictly equals the second. If they match, continue. If they do not (if err is not strictly equal to null;) then this assert will fail. Throws error, terminates app. (If err === null; then we're good.)
 
- //The db method defined below will connect us to the nucampsite database on the mongodb server. Can use this db object to access a set of methods to interact with that database.
+//The db method defined below will connect us to the nucampsite database on the mongodb server. Can use this db object to access a set of methods to interact with that database.
 MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
 
   assert.strictEqual(err, null);
